@@ -29,10 +29,10 @@
                 <a class="nav-item nav-link" href="#">Contact</a>
                 <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </div>
-            <form class="form-inline my-2 my-lg-0 ri">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+<!--            <form class="form-inline my-2 my-lg-0 ri">-->
+<!--                <input class="form-control mr-sm-2" type="search" placeholder="Search">-->
+<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--            </form>-->
         </div>
 
     </div>
@@ -41,6 +41,7 @@
 <main class="my-5">
     <div class="container">
         <h1>What do you want to search for on CraigList Clone site?</h1>
+<!-- Promotional Contents -->
         <div class="row">
             <div class="mx-auto col-sm-4">
                 <div class="text-center">
@@ -63,9 +64,21 @@
                     <p class="text-center text-muted">We built this with <i class="fa fa-heart" style="color: red"></i>. </p>
                 </div>
             </div>
+        </div>
 
+<!-- Search Form -->
+        <div class="my-5 row-fluid">
+            <form class="form-inline my-lg-0 ri" action="{% url 'new_search' %}" method="post">
+                {% csrf_token %}
+                <input id="search" name="search" class="form-control col-sm-8 col-md-10, col-lg-10 mr-sm-2" placeholder="Search">
+                <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Submit
+                    <i class="fa fa-paper-plane"></i>
+                </button>
+            </form>
         </div>
     </div>
+
+<!--    Dynamic content area -->
     <div class="container my-5">
         {% block content %}
 
