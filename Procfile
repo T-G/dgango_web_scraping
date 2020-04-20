@@ -1,1 +1,1 @@
-web: gunicorn simple_clone_listing.wsgi
+web: gunicorn django_web_scraping.wsgi
