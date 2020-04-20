@@ -6,13 +6,14 @@
     <div class="row">
         {% for post in final_postings %}
             <div class="col-sm-4">
-                <div class="card">
-                    <a href="{{ post.1 }}"><img src="..." class="card-img-top" alt="{{ post.0 }}"></a>
-                    <span>{{ post.0 }}</span>
+                <div class="card text-center">
+                    <a href="{{ post.1 }}"><img src="{{ post.3}}" class="card-img-top" alt="{{ post.0 }}"></a>
+<!--                    <span>{{ post.0 }}</span>-->
                   <div class="card-body">
                     <h5 class="card-title">{{ post.0 }}</h5>
-                    <p class="card-text">will check later</p>
-                    <a href="{{ post.1 }}" class="btn btn-light">View listing: Price {{ post.2 }}</a>
+<!--                    <p class="card-text"></p>-->
+                      <hr>
+                    <a href="{{ post.1 }}" class="btn btn-light text-uppercase text-warning">View listing: Price {{ post.2 | upper }}</a>
                   </div>
                 </div>
             </div>

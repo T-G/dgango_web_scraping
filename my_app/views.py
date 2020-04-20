@@ -36,7 +36,17 @@ def new_search(request):
         else:
             post_price = 'N/A'
 
-        final_postings.append((post_title, post_url, post_price))
+        # check if data-ids is present in the result-image
+        if post.find(class_='result-image').get('data-ids'):
+            CRAIGLIST_IMAGES_URL = 'https://images.craigslist.org/{}'
+            post_image_id = post.find(class_='result-image').get('data-ids').split(',')[0].split(':')[1]
+            post_image_url = CRAIGLIST_IMAGES_URL.format(post_image_id) + '_600x450.jpg'
+            #print(post_image_url)
+        else:
+            post_image_url = 'https://london.craigslist.org/images/peace.jpg'
+
+
+        final_postings.append((post_title, post_url, post_price, post_image_url))
         #print(final_postings)
         # if post.find(class_='result-price'):
         #     post_price = post.find(class_='result-price').text
