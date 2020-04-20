@@ -1,0 +1,1 @@
+web: gunicorn simple_clone_listing.wsgi
